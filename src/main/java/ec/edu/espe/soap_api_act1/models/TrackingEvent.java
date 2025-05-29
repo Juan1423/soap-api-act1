@@ -2,8 +2,6 @@ package ec.edu.espe.soap_api_act1.models;
 
 import java.sql.Date;
 
-import org.hibernate.annotations.Collate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
