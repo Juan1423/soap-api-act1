@@ -57,6 +57,12 @@
 			<artifactId>jakarta.xml.bind-api</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/jakarta.jws/jakarta.jws-api -->
+		<dependency>
+    		<groupId>jakarta.jws</groupId>
+    		<artifactId>jakarta.jws-api</artifactId>
+    		<version>3.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
