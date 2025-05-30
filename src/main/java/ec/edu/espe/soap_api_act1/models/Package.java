@@ -1,16 +1,13 @@
-package ec.edu.espe.soap_api_act1.models;
+package ec.edu.espe.soap_api_act1.models; // CAMBIO DE PAQUETE
 
-import java.util.List;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "packages")
@@ -18,41 +15,38 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Package {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long trackingNumber;
 
-    @Column(name= "sender_name", nullable = false)
+    @Id
+    @Column(name = "tracking_number", unique = true, nullable = false)
+    private String trackingNumber;
+
+    @Column(name = "sender_name", nullable = false)
     private String senderName;
 
-    @Column(name= "receiver_name", nullable = false)
+    @Column(name = "receiver_name", nullable = false)
     private String receiverName;
 
-    @Column(name= "origin", nullable = false)
+    @Column(name = "origin", nullable = false)
     private String origin;
 
-    @Column(name= "destination", nullable = false)
+    @Column(name = "destination", nullable = false)
     private String destination;
 
-    @Column(name= "weight", nullable = false)
-    private String weight;
+    @Column(name = "weight_kg", nullable = false)
+    private double weight;
 
-    @Column(name= "dimensions", nullable = false)
+    @Column(name = "dimensions", nullable = false)
     private String dimensions;
 
-    @Column(name= "status", nullable = false)
+    @Column(name = "status", nullable = false)
     private String status;
 
-    @Column(name= "current_location", nullable = false)
+    @Column(name = "current_location", nullable = false)
     private String currentLocation;
 
-    @Column(name= "estimated_delivery_date", nullable = false)
-    private String estimatedDeliveryDate;
+    @Column(name = "estimated_delivery_date")
+    private LocalDate estimatedDeliveryDate;
 
-    @Column(name= "history", nullable = false)
-    private List<TrackingEvent> history;
-
-
-
+    @Transient
+    private List<TrackingEvent> history = new ArrayList<>(); // Usamos models.TrackingEvent aquí
 }
