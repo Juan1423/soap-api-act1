@@ -10,10 +10,8 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-
 import jakarta.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,7 +31,6 @@ public class TrackingEndpoint {
     @ResponsePayload
     public JAXBElement<GetTrackingStatusResponse> getTrackingStatus(@RequestPayload JAXBElement<GetTrackingStatusRequest> requestElement) {
         String trackingNumber = requestElement.getValue().getTrackingNumber();
-
         // Llama al servicio de negocio
         Package pkg = packageService.getPackageStatus(trackingNumber);
 

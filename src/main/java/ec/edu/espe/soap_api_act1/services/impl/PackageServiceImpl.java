@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Implementación de la interfaz PackageService.
- * Contiene la lógica de negocio real.
- */
 @Service
 public class PackageServiceImpl implements PackageService {
 
@@ -37,8 +33,6 @@ public class PackageServiceImpl implements PackageService {
 
         Package pkg = foundPackage.get();
 
-        // Simular historial si no está cargado (debido a @Transient en Package)
-        // En un escenario real con DB, el historial se cargaría desde otra tabla via relación JPA.
         if (pkg.getHistory() == null || pkg.getHistory().isEmpty()) {
             List<TrackingEvent> simulatedHistory = new ArrayList<>();
             simulatedHistory.add(new TrackingEvent(LocalDateTime.now().minusDays(3), "Paquete recibido en centro logístico", "Centro A"));

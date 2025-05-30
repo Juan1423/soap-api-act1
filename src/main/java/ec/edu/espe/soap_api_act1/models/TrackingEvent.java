@@ -1,4 +1,4 @@
-package ec.edu.espe.soap_api_act1.models; // CAMBIO DE PAQUETE
+package ec.edu.espe.soap_api_act1.models; 
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,13 +23,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class TrackingEvent {
 
-    @XmlElement(required = true, namespace = "http://miservicio.tracking") // Para el contrato SOAP
+    @XmlElement(required = true, namespace = "http://miservicio.tracking") 
     private LocalDateTime date;
 
-    @XmlElement(required = true, namespace = "http://miservicio.tracking") // Para el contrato SOAP
+    @XmlElement(required = true, namespace = "http://miservicio.tracking") 
     private String description;
 
-    @XmlElement(required = true, namespace = "http://miservicio.tracking") // Para el contrato SOAP
+    @XmlElement(required = true, namespace = "http://miservicio.tracking") 
     private String location;
 
 }

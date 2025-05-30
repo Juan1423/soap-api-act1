@@ -1,4 +1,4 @@
-package ec.edu.espe.soap_api_act1.models; // CAMBIO DE PAQUETE
+package ec.edu.espe.soap_api_act1.models; 
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -48,5 +48,5 @@ public class Package {
     private LocalDate estimatedDeliveryDate;
 
     @Transient
-    private List<TrackingEvent> history = new ArrayList<>(); // Usamos models.TrackingEvent aquí
+    private List<TrackingEvent> history = new ArrayList<>(); 
 }

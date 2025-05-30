@@ -10,13 +10,9 @@ import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.XsdSchema;
-
 import org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver;
-
 import java.util.Properties;
-
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-
 
 @Configuration
 @EnableWs
