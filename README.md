@@ -103,18 +103,19 @@ Una vez que la API está en ejecución, puedes usar Postman para enviar solicitu
 5.  **Configurar el cuerpo de la solicitud (Body):**
     Ve a la pestaña `Body`, selecciona la opción `raw` y elige `XML` en el desplegable.
 
-    Aquí deberás pegar el XML de la solicitud SOAP que quieres enviar. En este caso, para laoperacion `getPackageStatus`:
+    Aquí deberás pegar el XML de la solicitud SOAP que quieres enviar. En este caso, para la operacion `getPackageStatus`:
+    Puedes usar este ejemplo para probar.
 
     ```xml
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                   xmlns:seg="http://miservicio.tracking">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <seg:GetTrackingStatusRequest>
-         <seg:trackingNumber>CO1122334455</seg:trackingNumber>
-      </seg:GetTrackingStatusRequest>
-   </soapenv:Body>
-</soapenv:Envelope>
+        <soapenv:Header/>
+        <soapenv:Body>
+            <seg:GetTrackingStatusRequest>
+                <seg:trackingNumber>CO1122334455</seg:trackingNumber>
+            </seg:GetTrackingStatusRequest>
+        </soapenv:Body>
+    </soapenv:Envelope>
     ```
 
 6.  **Enviar la solicitud:**
